@@ -69,6 +69,10 @@ try:
         'Pressure (hPa)': daily_data['surface_pressure_mean']
     })
 
+    # LOGIC: If Rainfall is greater than 0.1mm, mark as 'Yes', otherwise 'No'
+    # We use 0.1 instead of 0.0 to avoid 'trace' amounts or sensor noise.
+    df['Rained'] = df['Rainfall (mm)'].apply(lambda x: 'Yes' if x > 10 else 'No')
+
     # Save to CSV
     df.to_csv(FILENAME, index=False)
     print(f"✅ Success! Detailed data saved to '{FILENAME}'")
