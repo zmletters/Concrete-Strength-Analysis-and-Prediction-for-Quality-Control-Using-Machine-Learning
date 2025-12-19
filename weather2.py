@@ -5,13 +5,13 @@ from datetime import datetime, timedelta
 # --- Configuration ---
 LAT = 3.13   # Subang Jaya Latitude
 LON = 101.55 # Subang Jaya Longitude
-FILENAME = "subang_history_detailed2.csv"
+FILENAME = "subang_history_detailed3.csv"
 
 # Timeframe: Yesterday back to 1 year ago
 end_date = datetime.now() - timedelta(days=1)
 start_date = end_date - timedelta(days=365)
 
-end_date_str = "31/12/2024"
+end_date_str = "31/01/2025"
 start_date_str = "01/04/2024"
 end_date = datetime.strptime(end_date_str, "%d/%m/%Y")
 start_date = datetime.strptime(start_date_str, "%d/%m/%Y")
